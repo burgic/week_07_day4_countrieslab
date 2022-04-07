@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Country from '../components/Country';
+import CountryDetails from '../components/CountryDetails';
 import CountryList from '../components/CountryList';
 
 const CountryBox = () => {
@@ -30,6 +31,7 @@ const CountryBox = () => {
         <>
         <CountryList countries={countries} onCountrySelected={onCountrySelected} />
         <p>Total Population {totalPopulation}</p>
+        {selectedCountry ? <CountryDetails country = {selectedCountry} /> : null}
         </>
     )
 

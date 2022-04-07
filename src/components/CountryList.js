@@ -3,7 +3,7 @@ import Country from './Country';
 
 const CountryList = ({countries, onCountrySelected}) => {
     const countryItem = countries.map((country, index) => {
-        return <Country country={country} key={index} />
+        return <Country country={country} key={index} onCountrySelected={onCountrySelected} />
     })
 
     const handleChange = function(event) {
