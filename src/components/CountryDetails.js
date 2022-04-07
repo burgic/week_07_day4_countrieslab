@@ -7,6 +7,7 @@ const CountryDetails = ({country}) => {
             <h3>{country.name}</h3>
             <img src={country.flag} class = "flag"/>
             <p>Currency: {country.currencies[0].name}</p>
+            <p>Bordered By: {country.borders}</p>
         </div>
     )
 }
