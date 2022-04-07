@@ -5,7 +5,10 @@ function App() {
   return (
     <div>
     <h1>Country List</h1>
-    <CountryBox />
+
+            
+        <CountryBox />
+
     </div>
   );
 }

@@ -4,6 +4,7 @@ import CountryList from '../components/CountryList';
 
 const CountryBox = () => {
     const [countries, setCountries] = useState([]);
+    const [selectedCountry, setSelectedCountry] = useState(null);
 
     useEffect(() => {
         getCountries();
@@ -16,8 +17,20 @@ const CountryBox = () => {
         .then(countries => setCountries(countries))
         // .catch(err => console.error);
     }
+
+    const onCountrySelected = function(country) {
+        setSelectedCountry(country);
+    }
+
+    const totalPopulation = countries.reduce((total, country) => {
+        return total + country.population
+    }, 0)
+
     return (
-        <CountryList countries={countries} />
+        <>
+        <CountryList countries={countries} onCountrySelected={onCountrySelected} />
+        <p>Total Population {totalPopulation}</p>
+        </>
     )
 
     }
