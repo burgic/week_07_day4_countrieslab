@@ -12,8 +12,9 @@ const CountryBox = () => {
     const getCountries = function() {
         fetch('https://restcountries.com/v2/all')
         .then(res => res.json())
-        .then(res => console.log(res))
+        // .then(res => console.log(res))
         .then(countries => setCountries(countries))
+        // .catch(err => console.error);
     }
     return (
         <CountryList countries={countries} />
