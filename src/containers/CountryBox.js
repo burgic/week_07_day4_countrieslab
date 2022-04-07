@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Country from '../components/Country';
 import CountryDetails from '../components/CountryDetails';
 import CountryList from '../components/CountryList';
+import CountrySelect from '../components/CountrySelect';
 
 const CountryBox = () => {
     const [countries, setCountries] = useState([]);
@@ -28,11 +29,16 @@ const CountryBox = () => {
     }, 0)
 
     return (
-        <>
-        <CountryList countries={countries} onCountrySelected={onCountrySelected} />
-        <p>Total Population {totalPopulation}</p>
-        {selectedCountry ? <CountryDetails country = {selectedCountry} /> : null}
-        </>
+        <div>
+            <CountrySelect countries={countries} onCountrySelected={onCountrySelected} />
+            {selectedCountry ? <CountryDetails country = {selectedCountry} /> : null}
+            <p>Total Population {totalPopulation}</p>
+        </div>
+        // <>
+        // <CountryList countries={countries} onCountrySelected={onCountrySelected} />
+        // 
+        // {selectedCountry ? <CountryDetails country = {selectedCountry} /> : null}
+        // </>
     )
 
     }
