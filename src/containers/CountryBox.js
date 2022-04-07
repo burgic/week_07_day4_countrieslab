@@ -32,7 +32,7 @@ const CountryBox = () => {
         <div>
             <CountrySelect countries={countries} onCountrySelected={onCountrySelected} />
             {selectedCountry ? <CountryDetails country = {selectedCountry} /> : null}
-            <p>Total Population {totalPopulation}</p>
+            <p>Total World Population {totalPopulation}</p>
         </div>
         // <>
         // <CountryList countries={countries} onCountrySelected={onCountrySelected} />
